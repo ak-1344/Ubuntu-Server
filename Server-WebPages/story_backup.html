@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Server Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #f0f0f0;
+        }
+        .section {
+            min-height: 100vh;
+            padding: 80px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .landing {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #6e8efb;
+        }
+        p {
+            max-width: 800px;
+            margin-bottom: 1rem;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .story, .problems, .technologies, .features, .next-steps {
+            background-color: #f9f9f9;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #6e8efb;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .btn:hover {
+            background-color: #a777e3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#problems">Challenges</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#features">Features</a>
+        <a href="#next-steps">Next Steps</a>
+    </nav>
+
+    <section id="home" class="section landing">
+        <h1>Our Server Journey</h1>
+        <p>Discover how we built a multi-site hosting solution from scratch.</p>
+        <a href="#story" class="btn">Learn More</a>
+    </section>
+
+    <section id="story" class="section story">
+        <h2>Our Story</h2>
+        <div class="content">
+            <p>Our journey started with the idea of creating a web server on a virtual machine. Little did we know, it would involve many steps, technical challenges, and learning experiences. Here's the story of how we built this server from scratch:</p>
+            <p>It all began with the installation of Oracle VirtualBox. We were keen to create a server that would host multiple websites locally, so we needed a VM to serve as our virtual machine on which we could install a minimal OS without the overhead of a graphical interface. After some research, we settled on Ubuntu Server—a lightweight, open-source OS designed specifically for such tasks.</p>
+            <p>We created a new Ubuntu Server VM and proceeded to install it. This was the first milestone—setting up the virtual environment where our server would live. It was a clean slate: no GUI, just the terminal. We configured static IP addressing so our server would always be available on the same IP, which would be important for accessing the sites and managing them.</p>
+            <!-- Add more paragraphs as needed -->
+        </div>
+    </section>
+
+    <section id="problems" class="section problems">
+        <h2>Challenges We Faced</h2>
+        <div class="content">
+            <p>Throughout this journey of setting up the server, we faced several challenges, some big, some small, but all contributed to our learning experience. Here's a detailed list of all the problems and hurdles we encountered along the way:</p>
+            <ol>
+                <li>Initial Network Setup on Virtual Machine</li>
+                <li>Incorrect Network Access and IP Configuration</li>
+                <li>Nginx Installation and Initial Setup</li>
+                <li>File Permission Issues (403 Forbidden Errors)</li>
+                <li>Configuration Errors in Nginx</li>
+                <!-- Add more list items as needed -->
+            </ol>
+        </div>
+    </section>
+
+    <section id="technologies" class="section technologies">
+        <h2>Technologies Used</h2>
+        <div class="content">
+            <p>Here are the key technologies and tools we used to set up and configure the server:</p>
+            <ul>
+                <li>Ubuntu Server (VM): A lightweight Linux server distribution used as the base operating system for the server.</li>
+                <li>VirtualBox: A free and open-source virtualization software used to create and manage the Ubuntu Server virtual machine.</li>
+                <li>Nginx: A high-performance web server used to host multiple websites. It was configured to serve different sites on the same machine using virtual hosts.</li>
+                <li>Netplan (Networking): A tool used to configure networking on Ubuntu, specifically to set up a static IP for consistent access.</li>
+                <!-- Add more list items as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="features" class="section features">
+        <h2>Current Server Features</h2>
+        <div class="content">
+            <p>As of now, the server has the following features:</p>
+            <ul>
+                <li>Basic Web Server Setup (Nginx): Nginx is installed and configured to serve multiple websites from the server.</li>
+                <li>Multiple Sites Hosting: The server is configured to host multiple websites by setting up different root directories under the Nginx configuration.</li>
+                <li>Static Content Hosting: The server currently serves static content, such as HTML files, with basic styling (CSS) for a clean user experience.</li>
+                <li>Local Network Accessibility: The server is accessible from other devices within the local network using its IP address.</li>
+                <!-- Add more list items as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="next-steps" class="section next-steps">
+        <h2>What's Next?</h2>
+        <div class="content">
+            <p>Looking forward, the following tasks and improvements are planned for the server:</p>
+            <ul>
+                <li>Enable HTTPS: Set up SSL certificates to secure the websites and ensure HTTPS is used for all web traffic.</li>
+                <li>Improve Website Management: Create a more streamlined system for managing multiple websites with different configurations.</li>
+                <li>Implement Firewall and Security Hardening: Set up and configure a firewall to restrict unnecessary incoming traffic and only allow specific ports.</li>
+                <li>Deploy Web Applications and Databases: Explore deploying a web application or a database service on the server to support dynamic websites.</li>
+                <!-- Add more list items as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Created with passion by our team. This project represents our journey into server administration and web hosting. We're excited to continue learning and improving our skills in this field.</p>
+    </footer>
+
+    <script>
+        // Highlight active nav item
+        const navLinks = document.querySelectorAll('.navbar a');
+        const sections = document.querySelectorAll('.section');
+
+        function changeLinkState() {
+            let index = sections.length;
+
+            while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+            
+            navLinks.forEach((link) => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+        }
+
+        window.addEventListener('scroll', changeLinkState);
+    </script>
+</body>
+</html>

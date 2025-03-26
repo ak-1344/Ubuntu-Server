@@ -1,0 +1,31 @@
+server{
+    listen 80 default_server;
+    listen [::] :80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    server_name _;
+    location / {
+        try_files $uri $uri/= 404;
+    }
+    location /home {
+        root /var/www;
+        index index.html;
+    }
+    location /story {
+        root /var/www;
+        index index.html;
+    }
+}
+
+
+// The directory should look like this:
+// "/var/www" contains:
+// html story home
+// and each of these contain index.html
+
+
+
+
+//Update this configuration in "/etc/nginx.sites-enabled/default"

@@ -1,0 +1,36 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses:
+        - 192.168.74.100/24  # Desired IP address of the server (Static)
+      gateway4: 192.168.74.XX # IP address of the router (To which your are connected)
+      nameservers:
+        addresses: 
+          - 8.8.8.8
+          - 8.8.4.4
+  wifis:
+    wlp2s0:
+      dhcp4: no
+      addresses:
+        -192.168.74.XX/24 # Desired IP address of the server (Static)
+      gateway4: 192.168.74.XX # IP address of the router (To which your are connected)
+      nameservers:
+        addresses: 
+          - 8.8.8.8
+          - 8.8.4.4
+      access-points:
+        "SSID":
+          password: "password"
+  # Not needed, it is for bridging
+  bridges:
+    br0:
+      interfaces: [wlo1] # Interface to be bridged
+      dhcp4: yes
+
+# Save these configuration in "/etc/netplan/01-netcfg.yaml"
+
+# Then Apply the changes
+# sudo netplan apply
